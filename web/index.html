@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple E-Commerce</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #eecda3, #ef629f);
+      padding: 50px;
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      animation: slideIn 1s ease-out forwards;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #34495e;
+    }
+
+    .product-list {
+      margin-top: 30px;
+      display: none;
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .product-item {
+      margin: 10px 0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛍️ Welcome to Simple E-Commerce Store</h1>
+  <p>Products powered by <strong>Node.js</strong>, stored in <strong>PostgreSQL</strong>, and deployed with <strong>Docker Compose</strong>.</p>
+  <p>Click below to view our featured products:</p>
+
+  <button onclick="loadProducts()">🛒 Show Products</button>
+
+  <div class="product-list" id="productList">
+    <div class="product-item">📦 Wireless Earbuds - ₹1999</div>
+    <div class="product-item">🎧 Noise Cancelling Headphones - ₹4999</div>
+    <div class="product-item">📱 Smartphone Stand - ₹299</div>
+    <div class="product-item">💻 Laptop Sleeve - ₹799</div>
+  </div>
+
+  <script>
+    function loadProducts() {
+      const list = document.getElementById('productList');
+      list.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
